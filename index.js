@@ -12,25 +12,29 @@ d) Use a template literal to return the phrase, "We put the '___' in '___'." Fil
 /* Now test your function:
 e) Outside of the function, define the variable str and initialize it with a string (e.g. 'Functions rock!').
 */
+// The substr() method returns a portion of the string, starting at the specified index and extending for a given number of characters afterwards.
+const str = 'Mozilla';
+
+console.log(str.substr(1, 2));
+// expected output: "oz"
+
+console.log(str.substr(2));
+// expected output: "zilla"
+
+
 let string = 'Functions rock!';
 
 function modifiedString(string){
-  //initialize my variables
-  let lastCharacter ='';
-  let firstThreeCharacters = '';
-
-  if (string.length <=3 ){
-    lastCharacter = string.slice(lastCharacter.length -1);
-    console.log(lastCharacter);
-    
+  let lastCharacters = '';
+  if (string.length <= 3) {
+    lastCharacters = string[string.length-1];
+  } else {
+    lastCharacters = string.slice(0,3);
   }
-  else if (string.length > 3){
-    firstThreeCharacters = string.slice(0,3);
-    console.log(firstThreeCharacters);
-  }
-}
-
+  return lastCharacters;
+};
 console.log(modifiedString(string));
+console.log();
 
 
-console.log(`We put the ${modifiedString(string)}' in ${modifiedString}. `);
+console.log(`We put the ${modifiedString(string)} in .`) 
